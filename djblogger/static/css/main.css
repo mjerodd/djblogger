@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:ital,wght@1,700&family=Merriweather:ital@1&display=swap');
+
+
+
+
+.logo {
+    font-family: 'Archivo', sans-serif;
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: -1.5px;
+}
+
+.test {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Merriweather', serif;
+}
+
+html,body {
+    font-family: 'Barlow', sans-serif;
+}
+
+.fw-500{
+    font-weight: 500;
+}
+
+.infscroll-title h1 {
+    font-size: 22px;
+    letter-spacing: -0.6px;
+}
+
+@media only screen and (max-width: 768px) {
+    .infscroll-title {
+        font-size: 0.9375rem;
+        letter-spacing: -0.0px;
+    }
+    .infscroll-author,
+    .infscroll-date{
+    }
+}
