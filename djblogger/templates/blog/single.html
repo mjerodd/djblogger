@@ -1,0 +1,45 @@
+{% extends "blog/3-col-template.html" %}
+
+{% block content-left %}
+{% include "blog/secondary-navbar.html" %}
+{% endblock %}
+
+{% block content-mid %}
+
+<style>
+    .blogger h1 {
+        letter-spacing: 0.6px;
+    }
+</style>
+<div class="blogger center mx-auto" style="max-width:683px">
+<div class="text-muted">{{ post.author }}</div>
+<div class="text-muted">{{ post.updated_at|date:"M d" }}</div>
+<h1 class="fw-bold pb2">{{ post.title }}</h1>
+<h2 class="text-muted fs-4 pb-4">{{ post.subtitle }}</h2>
+{{ post.content }}
+
+</div>
+{% endblock %}
+
+{% block content-right %}
+<div class="col-12">
+    <div class="pb-3">More From {{ post.author }}</div>
+        {% for post in related %}
+    <a href="{{ post.get_absolute_url }}" class="text-decoration-none">
+        <div class="card mb-3 border-0 ps-1">
+            <div class="row">
+                <div class="col-9 pe-2">
+            <span class="text-dark small">{{ post.author }}</span>
+                    <h1 class="mb-1 fs-6 p-0 text-dark fw-bold"></h1>
+                    </div>
+                <div class="col-3">
+                    <img src="https://picsum.photos/205/115" class="img-gluid float-end" alt="">
+                </div>
+                </div>
+        </div>
+    </a>
+        {% endfor %}
+
+
+</div>
+{% endblock %}

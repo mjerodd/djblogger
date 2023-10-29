@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from .models import Post
 # Create your views here.
@@ -15,4 +15,7 @@ class HomeView(ListView):
         return "blog/index.html"
 
 
-
+def post_single(request, post):
+    post = get_object_or_404(Post, slug=post, status="published")
+    related = Post.objects.filter(author=post.author)[:5]
+    return render(request, "blog/single.html", {"post": post, "related": related})
